@@ -13,6 +13,12 @@ class MyService(rpyc.Service):
 
 
 if __name__ == "__main__":
-    from rpyc.utils.server import ThreadedServer
-    server = ThreadedServer(MyService, port=12345)
+    from rpyc.utils.server import ThreadPoolServer
+    server = ThreadPoolServer(MyService, port=12345)
     server.start()
+
+# Tipos de servidor
+# - OneShotServer (Servidor vai atender um cliente por vez e depois termina)
+# - ForkingServer (Servidor atende varios cliente que se conecta a ele e dispara  um processo novo para cada cliente)
+# - ThreadedServer (Servidor atende varios clientes que se conecta a ele e dispara uma nova thread para cada cliente)
+# - ThreadPoolServer (Servidor atende varios clientes e gerencia um conjunto de threads)

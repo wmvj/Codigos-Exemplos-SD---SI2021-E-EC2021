@@ -1,5 +1,5 @@
-# comando para isntalar o pyro4: pip install Pyro4
-# comando para executgar o daemon: python -m Pyro4.naming
+# comando para instalar o pyro4: pip install Pyro4
+# comando para executar o daemon: python -m Pyro4.naming
 import Pyro4
 
 

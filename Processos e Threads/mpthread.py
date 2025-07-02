@@ -11,19 +11,19 @@ def sleeping(name):
     t = gmtime()  # -
     s = randint(1, 20)
     txt = str(t.tm_min)+':'+str(t.tm_sec)+' '+name + \
-        ' is going to sleep for '+str(s)+' seconds'  # -
+        ' vai dormir por '+str(s)+' segundos'  # -
     print(txt)  # -
     sleep(s)
     t = gmtime()  # -
     shared_x = shared_x + 1
     txt = str(t.tm_min)+':'+str(t.tm_sec)+' '+name + \
-        ' has woken up, seeing shared x being '+str(shared_x)  # -
+        ' acordou, vendo o valor da variável compartilhada x sendo '+str(shared_x)  # -
     print(txt)  # -
 
 
 def sleeper(name):
     sleeplist = list()
-    print(name, 'sees shared x being', shared_x)  # -
+    print(name, ' vê a variável compartilhada x sendo', shared_x)  # -
     for i in range(3):
         subsleeper = Thread(target=sleeping, args=(name+' '+str(i),))
         sleeplist.append(subsleeper)
@@ -32,7 +32,7 @@ def sleeper(name):
         s.start()
     for s in sleeplist:
         s.join()
-    print(name, 'sees shared x being', shared_x)  # -
+    print(name, 'vê a variável compartilhada x sendo', shared_x)  # -
 
 
 # -
